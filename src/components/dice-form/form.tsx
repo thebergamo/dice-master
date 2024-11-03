@@ -70,15 +70,6 @@ export default function DiceForm() {
     <FormProvider {...methods}>
       <div className="flex flex-col items-center space-y-6 p-6 bg-gray-100 rounded-lg shadow-md max-w-md mx-auto">
         <h1 className="text-2xl font-bold">Dice Roller</h1>
-        {!token && (
-          <Alert>
-            <InfoIcon className="h-4 w-4" />
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>
-              Rolls requests are valid for 1 hour.
-            </AlertDescription>
-          </Alert>
-        )}
         {methods.formState.isSubmitSuccessful && (
           <Alert>
             <Dices className="h-4 w-4" />

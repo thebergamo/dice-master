@@ -29,7 +29,7 @@ export async function generateToken({
 
 export async function getToken(token: string) {
   const resultSet = await turso.execute({
-    sql: `SELECT * FROM rolls WHERE token = ? AND expires_at > DATETIME('now')`,
+    sql: `SELECT * FROM rolls WHERE token = ?`,
     args: [token],
   });
 
