@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export default async function RollPage({
   params,
 }: {
-  params: { token: string };
+  params: Promise<{ token: string }>;
 }) {
   const { token } = await params;
   const rollRequest = await getToken(token);

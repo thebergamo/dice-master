@@ -9,15 +9,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { AlertCircle, Check, Copy, Dices, InfoIcon } from "lucide-react";
+import { Check, Copy, Dices, InfoIcon } from "lucide-react";
 import { createRollRequest } from "@/app/action";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import {
-  FormProvider,
-  SubmitHandler,
-  useForm,
-  useFormContext,
-} from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { FormSchema, formSchema, formInitialValues } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -29,26 +24,6 @@ import {
   FormMessage,
 } from "../ui/form";
 import { useState } from "react";
-
-function FormErrors() {
-  const form = useFormContext<FormSchema>();
-  if (form.formState.errors && !form.formState.isSubmitted) {
-    return null;
-  }
-  return (
-    <Alert variant="destructive">
-      <AlertCircle />
-      <AlertTitle>There was an error with your submission</AlertTitle>
-      <AlertDescription>
-        <ul className="list-disc list-inside">
-          {Object.values(form.formState.errors).map((value, idx) => (
-            <li key={idx}>{value.message}</li>
-          ))}
-        </ul>
-      </AlertDescription>
-    </Alert>
-  );
-}
 
 export default function DiceForm() {
   const methods = useForm<FormSchema>({
