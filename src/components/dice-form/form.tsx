@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Check, Copy, Dices, InfoIcon } from "lucide-react";
+import { Check, Copy, Dices } from "lucide-react";
 import { createRollRequest } from "@/app/action";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
